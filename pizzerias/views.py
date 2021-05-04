@@ -15,12 +15,12 @@ def index(request):
 
 
 def names(request):
-    names = Name.objects.order_by("date_added")
+    n = Name.objects.order_by("date_added")
     # A context is a dictionary in whicht he keys are names we'll use
     # in the template to access the data, and the values are the data we
     # need to send to the template. In this case, there's one key-value pair,
     # which contains the set of topics we'll display on the page.
-    context = {"names": names}
+    context = {"n": n}
 
     # when building a page that uses data, we pass the context variable to render()
     # as well as the request object and the path to the template
