@@ -22,4 +22,5 @@ urlpatterns = [
     # subsequently passed to the topic funtion in views.py
     path("names/<int:name_id>/", views.name, name="name"),
     path("new_name/", views.new_name, name="new_name"),
+    path("new_comment/<int:name_id>/", views.new_comment, name="new_comment"),
 ]

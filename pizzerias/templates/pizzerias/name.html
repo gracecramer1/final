@@ -10,9 +10,9 @@
     <li>
         <!--a vertical line (|) represents a template filter
             -a function that modifies the value i a template variable-->
-        <p>{{ entry.date_added|date:'M d, Y H:i' }} </p>
+        <p>{{ topping.date_added|date:'M d, Y H:i' }} </p>
         <!--The filter linebreaks ensures that long text entries include line breaks-->
-        <p>{{ entry.text|linebreaks }} </p>
+        <p>{{ topping.text|linebreaks }} </p>
 
     </li>
     {% empty %}
@@ -20,5 +20,9 @@
     <li>There are no toppings listed for this pizza yet.</li>
     {% endfor %}
 </ul>
+
+<p>
+    <a href="{% url 'pizzerias:new_comment' name.id %}">Add new comment</a>
+</p>
 
 {% endblock content %}
