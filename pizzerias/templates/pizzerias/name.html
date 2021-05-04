@@ -1,0 +1,24 @@
+{% extends "pizzerias/base.html" %}
+
+{% block content %}
+
+<p>Name: {{ name }} </p>
+
+<ul>
+
+    {% for topping in toppings %}
+    <li>
+        <!--a vertical line (|) represents a template filter
+            -a function that modifies the value i a template variable-->
+        <p>{{ entry.date_added|date:'M d, Y H:i' }} </p>
+        <!--The filter linebreaks ensures that long text entries include line breaks-->
+        <p>{{ entry.text|linebreaks }} </p>
+
+    </li>
+    {% empty %}
+    <!-- if the list is empty then display message-->
+    <li>There are no toppings listed for this pizza yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

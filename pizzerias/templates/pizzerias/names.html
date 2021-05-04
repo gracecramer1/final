@@ -1,0 +1,27 @@
+{% extends "pizzerias/base.html" %}
+
+{% block content %}
+
+<p>Menu</p>
+
+<!--in standard html, a bulleted list is called an unordered list
+    and is indicated by the tags <ul></ul>.-->
+<ul>
+    <!-- for loop to loop through each topic
+        NOTE note like python, needs a endfor-->
+    {% for name in names %}
+
+    <!--to print a variable in a template, wrap the
+        variable name in double braces-->
+    <li>
+        <a href="{% url 'pizzerias:name' name.id %}">{{ name }}</a>
+    </li> <!-- li - list item -->
+    {% empty %}
+    <!-- if the list is empty then display the message -->
+    <li>No pizzas have been added yet.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'pizzerias:new_name' %}">Add a new pizza</a>
+
+{% endblock content %}
