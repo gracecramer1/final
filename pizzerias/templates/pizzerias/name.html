@@ -8,9 +8,7 @@
 
     {% for topping in toppings %}
     <li>
-        <!--a vertical line (|) represents a template filter
-            -a function that modifies the value i a template variable-->
-        <p>{{ topping.date_added|date:'M d, Y H:i' }} </p>
+
         <!--The filter linebreaks ensures that long text entries include line breaks-->
         <p>{{ topping.text|linebreaks }} </p>
 
