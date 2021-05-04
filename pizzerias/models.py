@@ -7,6 +7,7 @@ class Name(models.Model):
     text = models.CharField(max_length=200)
     # auto_now_add=True - set this attribute to the current date and time
     date_added = models.DateTimeField(auto_now_add=True)
+    # image = models.ImageField(upload_to="images", blank=True)
 
     def __str__(self):
         return self.text

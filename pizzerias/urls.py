@@ -1,5 +1,6 @@
 # path function needed when mapping URLs to views
 from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 # the dot tells Python to import the views.py module from
 # the same directory as the current urls.py module
@@ -24,3 +25,5 @@ urlpatterns = [
     path("new_name/", views.new_name, name="new_name"),
     path("new_comment/<int:name_id>/", views.new_comment, name="new_comment"),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
